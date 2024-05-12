@@ -1,0 +1,42 @@
+.myProgress{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    height: 27px;
+    width: 100%;
+    background-color: #e0e0de;
+    border-radius: 50px;
+}
+  .percentage{
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+.filler {
+    height: 100%;
+    width: 0;
+    background-color: #000;
+    border-radius: inherit;
+    text-align: right;
+}
+  
+.label {
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.title {
+    font-weight: 500;
+    margin: 20px 10px 10px 0;
+    color: #0e183e;
+    font-size: 16px;
+    font-family: Poppins;
+}
