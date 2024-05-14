@@ -23,6 +23,17 @@ const CheckBox = () => {
 
             <div className="checkBox">
 
+
+            <div className="box">
+                    <label class="main">Edit
+                        <input type="checkbox"
+                            checked={edit}
+                            onChange={handleEdit}
+                        />
+                        <span class="checkbox-container"></span>
+                    </label>
+                </div>
+
                 <div className="box">
                     <label class="main">Comment
                         <input type="checkbox"
@@ -34,15 +45,6 @@ const CheckBox = () => {
                     </label>
                 </div>
 
-                <div className="box">
-                    <label class="main">Edit
-                        <input type="checkbox"
-                            checked={edit}
-                            onChange={handleEdit}
-                        />
-                        <span class="checkbox-container"></span>
-                    </label>
-                </div>
 
                 <div className='box'>
                     <label class='main'>  Add members
