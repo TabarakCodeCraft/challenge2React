@@ -1,10 +1,10 @@
 import React from "react";
 import './progress.css';
 
-const ProgressBar = (props) => {
-    const { title, bgcolor, value } = props;
+const ProgressBar = ({ title, bgcolor, value }) => {
 
-    const completed = Math.round(value);
+
+    const percentage = Math.round(value);
 
     return (
         <>
@@ -16,7 +16,7 @@ const ProgressBar = (props) => {
 
                 <div className="flex">
                     <span className="label"></span>
-                    <span className="percentage">{`${completed}%`}</span>
+                    <span className="percentage">{`${percentage}%`}</span>
 
                 </div>
             </div>
