@@ -7,7 +7,15 @@ const Card2 = () => {
     const [tag, setTag] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
-    const handelInput = (e) => {
+    // Load tags from local storage when the component mounts
+    useEffect(() => {
+        const storedTags = localStorage.getItem('tags');
+        if (storedTags) {
+            setTag(JSON.parse(storedTags));
+        }
+    }, []); // Empty dependency array ensures this runs only once
+
+    const handleInput = (e) => {
         setInputValue(e.target.value);
     };
 
@@ -15,7 +23,7 @@ const Card2 = () => {
         if (inputValue.trim() !== '') {
             const newTags = [...tag, inputValue.trim()];
             setTag(newTags);
-            localStorage.setItem('tag', JSON.stringify(newTags));
+            localStorage.setItem('tags', JSON.stringify(newTags));
             setInputValue('');
         }
     };
@@ -25,7 +33,7 @@ const Card2 = () => {
         newTags.splice(index, 1);
         setTag(newTags);
         localStorage.setItem('tags', JSON.stringify(newTags));
-    }
+    };
 
     return (
         <div className="card2">
@@ -38,7 +46,7 @@ const Card2 = () => {
                     type='text'
                     placeholder='Enter member name'
                     value={inputValue}
-                    onChange={handelInput} />
+                    onChange={handleInput} />
 
                 <button className='ADD' onClick={handleAdd}>ADD</button>
             </div>
