@@ -7,14 +7,13 @@ const Card2 = () => {
     const [tag, setTag] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
-    // Load tags from local storage when the component mounts
+  
     useEffect(() => {
         const storedTags = localStorage.getItem('tags');
         if (storedTags) {
             setTag(JSON.parse(storedTags));
         }
-    }, []); // Empty dependency array ensures this runs only once
-
+    }, []);
     const handleInput = (e) => {
         setInputValue(e.target.value);
     };
